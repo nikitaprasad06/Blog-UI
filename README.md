@@ -2,7 +2,7 @@
 
 This project gives as idea of how repository needs to be structured for a better readabiity and some of the code practices one should follow while designing a product.
 
-Following are the key points covered I wanted to present as part of this project,
+Following are the key points I wanted to present as part of this project,
 
 FUNCTION BASED COMPONENTS -
 Prefer function based components when choosing between class vs function based components, as it would be clean, maintainable and lot easier to write up the unit testing code.
@@ -45,7 +45,7 @@ import { Grid } from '@mui/material';
 UNIT TESTING -
 A very important part of a development cycle is to have your feature unit tested to ensure the functionalities are intact even when you are adding changes on top of it. The current test coverage stands at 73%.
 
-# Things that need some work
+# Improvements needed
 
 1. While integrating api calls, we need to have two separate apis to getAllBlogsList and then getBlogDetails when a users clicks on a Blog card so that we don’t consume huge data on the initial load. Currently everything is inside a single object.
 2. Image files can be handled in a better way to optimise the performance even more especially in case of mobile. But when dealing with apis image files can be sent in base64 format which then will be consumed by the UI, and hence this won’t be an issue.
