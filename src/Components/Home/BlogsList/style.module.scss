@@ -1,0 +1,95 @@
+.blogContainer {
+  padding: 2em;
+  
+  .blogCardContainerLoader {
+    padding: 1.5em 0px;
+  }
+
+  .blogCardContainer {
+    padding: 1.5em 0px;
+    display: flex;
+    justify-content: center;
+
+    .blogCard {
+      transition: transform 500ms ease;
+      &:hover,
+      &:focus-within {
+        transform: scale(1.05);
+        .cardHeader::after {
+          transform: scaleX(1);
+        }
+        .cardImage {
+          filter: brightness(0.9);
+        }
+      }
+
+      .cardHeader {
+        position: relative;
+        width: fit-content;
+        font-weight: 600;
+        &::after {
+          content: " ";
+          position: absolute;
+          height: 4px;
+          bottom: -3px;
+          left: calc(var(--padding) * -1);
+          width: calc(100% + var(--padding));
+          background-color: var(--color-highlight);
+          transform-origin: left;
+          transition: transform 500ms ease;
+        }
+      }
+
+      .cardContent {
+        --padding: 1.5rem;
+        padding: var(--padding);
+        background: linear-gradient(
+          hsl(0 0% 0% / 0),
+          hsl(20 0% 0% / 0.3) 20%,
+          hsl(0 0% 0% / 1)
+        );
+        color: var(--color-white);
+        font-weight: 600;
+        position: absolute;
+        bottom: 0;
+
+        .cardDescription {
+          overflow: hidden;
+          margin-top: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+@media (hover) {
+  .blogCard {
+    &:hover,
+    &:focus-within {
+      .cardContent {
+        transform: translateY(0);
+        transition-delay: 500ms;
+        > * {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+  .cardContent {
+    transform: translateY(50%);
+    transition: transform 500ms ease;
+    > *:not(.cardHeader, .cardTimestamp) {
+      opacity: 0;
+      transition: opacity 500ms linear;
+      transition-delay: 800ms;
+    }
+  }
+  .cardImage {
+    filter: brightness(0.75);
+  }
+
+  .cardHeader::after {
+    transform: scaleX(0);
+  }
+}
+

@@ -1,0 +1,26 @@
+@import '../../variables/animations.scss';
+
+.scrollButtonContainer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 4ch;
+    width: 4ch;
+    border-radius: 3px;
+    background-color: var(--color-yellow);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+        animation: bounce 1s infinite;
+        &:hover {
+            .arrowUpIcon {
+                color: var(--color-blue);
+            }
+        }
+   
+    .arrowUpIcon {      
+        color: var(--color-white);
+        font-size: 24px !important;
+        
+    }    
+}

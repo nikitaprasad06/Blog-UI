@@ -1,0 +1,16 @@
+
+.blogDetailsContainer {
+    padding: 1.5em;
+    margin-top: 0.5em;
+    text-align: justify;
+
+    .imageContainer {
+        display: flex;
+        justify-content: center;
+        margin: 1em 0;
+    }
+}
+
+.bold {
+    font-weight: 600 !important;
+}
